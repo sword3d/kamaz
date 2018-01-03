@@ -22,7 +22,7 @@
 
   5. Header
     5.1. Main navigation
-    5.2. Search
+    5.2. Header bottom
 
   6. Plugins
     6.1. Preloader
@@ -54,16 +54,18 @@
 
    body {
     font-family: 'Open Sans', sans-serif;
-    color:#787575;
+    color:#000000;
     font-size:14px;
     line-height:22px;
-    background:#f1f1f1;
+    background:#ffffff;
     -webkit-text-size-adjust: none;
    }
    * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
    }
 
    ::selection{
@@ -277,12 +279,27 @@
 
 ------------------------------------------------ */
    
-   header {}
-   .logo{}
+   header {
+    position: fixed;
+    width: 290px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 10;
+   }
+   .logo{
+    height: 135px;
+    width: 100%;
+    background-color: #0d53a0;
+    padding: 35px 15px 15px 15px;
+    text-align: center;
+   }
    .logo a{
+     margin: 0 auto;
      display:block;
-     width:278px;
-     height:85px;
+     width:234px;
+     height:57px;
      background:url(../images/logo.png) 0 0 no-repeat;
      text-decoration:none;
      text-indent:-9999px;
@@ -292,9 +309,66 @@
         5.1. Main navigation
   -------------------------------------------- */
   /* --------------------------------------------
-        5.2. Search
+        5.2. Header bottom
   -------------------------------------------- */
+      .header_box_bottom {
+        background: #0d53a0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      .header_bottom_left {
+        float: left;
+      }
+      a.phone_btn {
+        padding: 25px 15px;
+        background-color: #ff0000;
+        display: block;
+        font-size: 14px;
+        line-height: 16px;
+        color: #ffffff;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      a.phone_btn {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .phone_btn i {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
 
+      a.phone_btn:hover .phone_animation {
+        -webkit-animation: phone_animation 0.25s linear infinite;
+        animation: phone_animation 0.25s linear infinite;
+      }
+
+      @keyframes phone_animation {
+        from {
+          transform:  scale(1.1);
+        }
+
+        to {
+          transform:  scale(1.0);
+        }
+      }
+
+      @-webkit-keyframes phone_animation {
+        from {
+          -webkit-transform: scale(1.1);
+        }
+
+        to {
+          -webkit-transform: scale(1.0);
+        }
+      } 
+
+      .header_bottom_right {
+        overflow: hidden;
+      }
 /* ------------------------------------------------
 
     6. Plugins
